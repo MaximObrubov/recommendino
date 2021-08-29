@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import Film from '../../model/film/film';
+import Film from '../../entities/film/film';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +20,11 @@ export class FilmService {
     this.films = [
       {
         name: 'Last Action Hero',
-        rating: 10.0,
+        rating: 5,
       },
       {
         name: 'Hero',
-        rating: 10.0,
+        rating: 9,
       },
     ]
     return this.films;

@@ -1,0 +1,17 @@
+:host .rating-wrp {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+:host .star {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+:host .rating {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

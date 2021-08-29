@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmService } from '../services/film/film.service';
-import Film from '../model/film/film';
+import Film from '../entities/film/film';
+
+export interface Film2Template extends Film {
+  ratingPerc: string,
+}
 
 @Component({
   selector: 'app-film-list',
@@ -10,14 +14,22 @@ import Film from '../model/film/film';
 })
 export class FilmListComponent implements OnInit {
   
-  films: Film[] = [];
+  MAX_RATING = 0;
+  
+  films: Film2Template[] = [];
   
   selectedFilm: Film | null = null;
   
   constructor(private service: FilmService) {}
 
   ngOnInit(): void {
-    this.films = this.service.getFilms();
+    this.films = this.service.getFilms().map((f: Film) => {
+      return {
+        ...f,
+        ratingPerc: Film.percentRating(f)
+      }
+    })
+    this.MAX_RATING = Film.MAX_RATING;
   }
   
   selectFilm(film: Film) {

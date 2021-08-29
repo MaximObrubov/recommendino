@@ -1,0 +1,14 @@
+:host * > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+:host .icon {
+  --size: 40px;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: rgb(190, 190, 190);
+  border: 2px solid var(--base-border-color);
+}

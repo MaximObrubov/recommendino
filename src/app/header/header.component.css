@@ -1,0 +1,13 @@
+:host {
+  background-color: var(--base-bg-color);
+  display: block;
+  width: 100%;
+  overflow: auto;
+  padding: 10px 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:host .avatar {
+  float: right;
+}
